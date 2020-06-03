@@ -8,11 +8,17 @@ import { User } from './auth-form/user';
 })
 export class AppComponent {
   title = 'Angular9';
+  remeberMe: boolean = false;
   createUser(user: User) {
     console.log('Create account', user);
   }
 
-  loginUser(user: User) {
-    console.log('Login', user);
+  rememberUser(value: boolean) {
+    this.remeberMe = value;
   }
+
+  loginUser(user: User) {
+    console.log('Login', user, this.remeberMe);
+  }
+
 }
